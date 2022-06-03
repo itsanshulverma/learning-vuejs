@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Learing Vue - Widgets</title>
+	<script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+	
+	<div id="app">
+		<h2>{{ title }} - {{ author }} - {{ counter }}</h2>
+
+		<!-- v-on:click OR @click is a Vue directive for click events -->
+		<button v-on:click="counter++">Increase Counter</button>
+		<button @click="counter--">Decrease Counter</button>
+		<!-- without arguement -->
+		<div @click="changeTitle">Change book title</div>
+		<!-- with arguement -->
+		<div @click="changeTitle2('Harry Potter: Goblet of Fire')">Change book title 2</div>
+	</div>
+
+	<script src="app.js"></script>
+</body>
+</html>
