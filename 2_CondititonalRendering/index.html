@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Learing Vue - Widgets</title>
+	<script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+	
+	<div id="app">
+		<div v-if="showBooks">
+			<h2>{{ title }} - {{ author }}</h2>
+		</div>
+
+		<button @click="toggleShowBooks">
+			<!-- <span v-if="showBooks">Hide Books</span>
+			<span v-if="!showBooks">Show Books</span> -->
+			<span v-if="showBooks">Hide Books</span>
+			<span v-else>Show Books</span>
+		</button>
+
+		<div v-show="showBooks">currently showing books</div>
+		<!-- here v-show as well as v-if is doing the same thing, but
+		there is a subtle difference -
+		> v-if removes the element from DOM when it is false and adds it when it is true,
+		> v-show simply uses CSS display property to toggle between block and none. -->
+	</div>
+
+	<script src="app.js"></script>
+</body>
+</html>
