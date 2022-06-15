@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learing Vue - Widgets</title>
+  <script src="https://unpkg.com/vue@3"></script>
+  <style>
+    .box {
+      padding: 100px 0;
+      width: 400px;
+      text-align: center;
+      background-color: #ddd;
+      margin: 25px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app">
+    <div v-if="showBooks">
+      <h2>{{ title }} - {{ author }}</h2>
+    </div>
+
+    <button @click="toggleShowBooks">
+      <span v-if="showBooks">Hide Books</span>
+      <span v-else>Show Books</span>
+    </button>
+
+    <br />
+    <!-- mouse events -->
+    <div class="box" @mouseover="handleEvents($event, 10)">mouseover</div>
+    <div class="box" @mouseleave="handleEvents">mouseleave</div>
+    <div class="box" @dblclick="handleEvents">double click</div>
+    <div class="box" @mousemove="handleMouseMove">position: {{ x }}, {{ y }}</div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
