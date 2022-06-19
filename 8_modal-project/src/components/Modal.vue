@@ -2,8 +2,12 @@
   <!-- Event Modifiers - self -->
   <div class="backdrop"  @click.self="closeModal">
     <div class="modal" :class="{ bruh: theme === 'bruh' }">
-      <h1 class="modal-title">{{ title }}</h1>
-      <p class="modal-content">{{ content }}</p>
+      <!-- <h1 class="modal-title">{{ title }}</h1>
+      <p class="modal-content">{{ content }}</p> -->
+      <slot>Default Content</slot>
+      <div class="actions">
+        <slot name="links"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -11,7 +15,8 @@
 <script>
 export default {
   name: 'Modal',
-  props: ['title', 'content', 'theme'],
+  // props: ['title', 'content', 'theme'],
+  props: ['theme'],
   methods: {
     closeModal() {
       // Emitting custom events
@@ -21,7 +26,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   .backdrop {
     position: fixed;
     top: 0;
@@ -38,7 +43,6 @@ export default {
     background-color: #fff;
     border-radius: 10px;
     width: 400px;
-    height: 200px;
     z-index: 2;
   }
   .modal-title {
@@ -52,5 +56,18 @@ export default {
     background-size: cover;
     color: #fff;
   }
-
+  .modal .actions a {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #222;
+    margin: 10px;
+    border-radius: 7px;
+    border: 1px solid #222;
+    text-decoration: none;
+  }
+  .bruh .actions a {
+    color: #fff;
+    background-color: #222;
+    border: 1px solid #fff;
+  }
 </style>
