@@ -18,6 +18,7 @@
 
 nav {
   padding: 30px;
+  margin-bottom: 50px;
 }
 
 nav a {
