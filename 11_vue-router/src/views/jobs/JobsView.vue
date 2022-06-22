@@ -29,14 +29,13 @@ export default {
   width: 420px;
   padding: 30px auto;
   background-color: #eee;
-  margin: 10px auto;
+  margin: 6px auto;
   border-radius: 10px;
-  color: #2c3e50;
+  color: #111;
   cursor: pointer;
 }
 .jobs a:hover {
-  background-color: #555;
-  color: #fff;
+  background-color: #bbb;
 }
 
 </style>
