@@ -11,13 +11,14 @@ export default {
   name: 'JobsView',
   data() {
     return {
-      jobs: [
-        { title: 'Front-end Developer', id: 1, details: 'lorem ipsum dolar' },
-        { title: 'Back-end Developer', id: 2, details: 'lorem ipsum dolar' },
-        { title: 'Database Engineer', id: 3, details: 'lorem ipsum dolar' },
-        { title: 'Mobile Developer', id: 4, details: 'lorem ipsum dolar' },
-      ]
+      jobs: null
     }
+  },
+  mounted() {
+    fetch('http://localhost:3000/jobs')
+      .then(res => res.json())
+      .then(data => this.jobs = data)
+      .catch(err => console.log(err.message))
   }
 }
 </script>
