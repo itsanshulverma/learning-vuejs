@@ -5,17 +5,23 @@
     <button @click="handleClick">Click me</button>
     <input type="text" v-model="name" />
     <button @click="age++">Increment age</button> -->
-    <h2>Refs</h2>
+
+    <!-- <h2>Refs</h2>
     <p>{{ userOne.name }} - {{ userOne.age }}</p>
     <button @click="updateUserOne">Update user one</button>
     <h2>Reactive</h2>
     <p>{{ userTwo.name }} - {{ userTwo.age }}</p>
-    <button @click="updateUserTwo">Update user two</button>
+    <button @click="updateUserTwo">Update user two</button> -->
+
+    <input type="text" v-model="search">
+    <div v-for="name in searchedNames" :key="name">
+      {{ name }}
+    </div>
   </div>
 </template>
 
 <script>
-import { ref, reactive } from 'vue'
+import { computed, ref, reactive } from 'vue'
 
 export default {
   name: 'HomeView',
@@ -48,8 +54,8 @@ export default {
     //   name = 'new name' // no change
     // }
 
-    /* ----------------------------------------------- */
     // Using ref to make values reactive
+    /* ----------------------------------------------- */
     // const name = ref('dexter')
     // const age =  ref(24)
 
@@ -61,8 +67,8 @@ export default {
     // return { name: name, age, handleClick }
     /* ----------------------------------------------- */
 
-    /* ----------------------------------------------------- */
     // Refs vs Reactive
+    /* ----------------------------------------------------- */
     // const userOne = ref({ name: 'dexter', age: 24 })
     // const updateUserOne = () => {
     //   userOne.value.age = 29
@@ -80,7 +86,17 @@ export default {
       so using ref is preferred.
       e.g. reactive('mario') can not be updated later on.
     */
-   /* ------------------------------------------------------- */
+    /* ------------------------------------------------------- */
+
+    // Using computed
+    /* ------------------------------------- */
+    const search = ref('')
+    const names = ref(['dexter', 'kingpin', 'fargo', 'killmonger', 'punisher', 'killgrave'])
+    const searchedNames = computed(() => {
+      return names.value.filter((name) => name.includes(search.value))
+    })
+
+    return { search, searchedNames }
 
   }
 }
