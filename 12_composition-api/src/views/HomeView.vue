@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { watch, computed, ref, reactive, watchEffect } from 'vue'
+import { watch, computed, ref, reactive, watchEffect, onMounted, onUnmounted, onUpdated } from 'vue'
 
 export default {
   name: 'HomeView',
@@ -118,6 +118,11 @@ export default {
       stopWatch()
       stopWatchEffect()
     }
+
+    // Using hooks inside setup
+    onMounted(() => console.log('mounted'))
+    onUnmounted(() => console.log('unmounted'))
+    onUpdated(() => console.log('updated'))
 
     return { search, searchedNames, handleClick }
 
