@@ -17,11 +17,12 @@
     <div v-for="name in searchedNames" :key="name">
       {{ name }}
     </div>
+    <button @click="handleClick">Stop watching</button>
   </div>
 </template>
 
 <script>
-import { computed, ref, reactive } from 'vue'
+import { watch, computed, ref, reactive, watchEffect } from 'vue'
 
 export default {
   name: 'HomeView',
@@ -92,11 +93,33 @@ export default {
     /* ------------------------------------- */
     const search = ref('')
     const names = ref(['dexter', 'kingpin', 'fargo', 'killmonger', 'punisher', 'killgrave'])
+
+    // Using watch function/watchEffect hook
+    const stopWatch = watch(search, () => {
+      console.log('watch function ran')
+    })
+    const stopWatchEffect = watchEffect(() => {
+      console.log('watchEffect fucntion ran', search.value)
+    })
+    /*
+      In watch, we have to explicitly specify which data to watch,
+      but watchEffect watches every data inside it.
+      If we don't want to use the value inside the function and to run
+      it for the first time, use watch function.
+      Otherwise, use watchEffect which runs atleast once.
+    */
+
     const searchedNames = computed(() => {
       return names.value.filter((name) => name.includes(search.value))
     })
 
-    return { search, searchedNames }
+    // Stopping watch and watchEffect
+    const handleClick = () => {
+      stopWatch()
+      stopWatchEffect()
+    }
+
+    return { search, searchedNames, handleClick }
 
   }
 }
