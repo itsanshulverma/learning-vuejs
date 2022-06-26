@@ -1,8 +1,13 @@
 <template>
   <div class="blog">
-    <h3>{{ post.title }}</h3>
+    <router-link :to="{ name: 'BlogDetails', params: { slug: post.slug, id: post.id }}">
+      <h3>{{ post.title }}</h3>
+    </router-link>
     <img :src=post.displayImg />
     <p>{{ content }}<b>...</b></p>
+    <span v-for="tag in post.tags" :key="tag" class="tag">
+      #{{ tag }}
+    </span>
   </div>
 </template>
 
@@ -31,5 +36,13 @@ export default {
 }
 .blog img {
   height: 200px;
+  border-radius: 5px;
+}
+.tag {
+  color: #fff;
+  background-color: rgb(55, 80, 64);
+  padding: 5px 12px;
+  margin: auto 5px;
+  border-radius: 20px;
 }
 </style>

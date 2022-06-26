@@ -13,7 +13,7 @@
 <script>
 // @ is an alias to /src
 import BlogList from '@/components/BlogList.vue'
-import { ref } from 'vue'
+import getPosts from '@/composables/getPosts'
 
 export default {
   name: 'HomeView',
@@ -21,21 +21,8 @@ export default {
     BlogList
   },
   setup() {
-    const posts = ref([])
-    const error = ref(null)
-
-    const load = async () => {
-      try {
-        let data = await fetch('http://localhost:3000/posts')
-        if (!data.ok) {
-          throw Error(data.status + ': Data could not be loaded')
-        }
-        posts.value = await data.json()
-      } catch (err) {
-        error.value = err.message
-      }
-    }
-
+    
+    const [ posts, error, load ] = getPosts()
     load()
 
     return { posts, error }
