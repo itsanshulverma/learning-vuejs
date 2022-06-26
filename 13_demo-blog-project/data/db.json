@@ -17,12 +17,20 @@
      "tags": ["webdev", "vue", "routing"]
     },
     {
-      "id": 1,
+      "id": 3,
       "slug": "bruh",
       "title": "Meh! I am bored",
       "displayImg": "https://media.makeameme.org/created/bruh-im-bored-e4de704578.jpg",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus pellentesque erat. Suspendisse bibendum, tortor ac tempor dapibus, leo lorem vestibulum sem, eu commodo turpis nisl nec purus. Fusce viverra, enim sagittis tempus vehicula, nibh velit accumsan ex, nec porta augue arcu eget urna. Praesent dignissim diam neque, quis sodales mauris porttitor sit amet. Ut consectetur, sem a sagittis aliquam, sem nibh scelerisque ante, non laoreet nisl ante sed lectus. Nulla tristique, elit quis imperdiet interdum, turpis quam eleifend augue, eget auctor erat dolor vel dolor. Maecenas non ornare eros. Etiam aliquet, dolor quis hendrerit congue, eros orci sagittis est, sed accumsan metus libero vitae massa. Vestibulum mi nibh, fringilla ut viverra sit amet, suscipit id nisl. Proin volutpat nisi a leo aliquet, vitae consequat tortor luctus. Morbi vehicula feugiat velit elementum commodo. Ut iaculis luctus purus, et cursus risus dapibus sed. Nulla nec urna massa. Ut vitae nisl a est vehicula ullamcorper at facilisis lorem. Phasellus dignissim, nulla at blandit volutpat, tortor quam convallis lectus, sit amet congue nisi eros sed massa. Praesent maximus dui aliquet iaculis bibendum. Praesent risus turpis, elementum nec dapibus maximus, efficitur sed ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas placerat lorem at urna rhoncus, at semper mauris interdum. Aenean urna metus, viverra eu odio sit amet, finibus dictum magna. Suspendisse tortor mauris, pharetra et dolor vel, vehicula cursus magna.",
       "tags": ["memes", "bruh", "gif", "haha"]
+    },
+    {
+      "id": 4,
+      "slug": "doge-to-the-moon",
+      "title": "To the moon: The Wrath of Dogecoin",
+      "displayImg": "https://media2.giphy.com/media/ICDqoB0u8iBetBTX9a/giphy.gif",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus pellentesque erat. Suspendisse bibendum, tortor ac tempor dapibus, leo lorem vestibulum sem, eu commodo turpis nisl nec purus. Fusce viverra, enim sagittis tempus vehicula, nibh velit accumsan ex, nec porta augue arcu eget urna. Praesent dignissim diam neque, quis sodales mauris porttitor sit amet. Ut consectetur, sem a sagittis aliquam, sem nibh scelerisque ante, non laoreet nisl ante sed lectus. Nulla tristique, elit quis imperdiet interdum, turpis quam eleifend augue, eget auctor erat dolor vel dolor. Maecenas non ornare eros. Etiam aliquet, dolor quis hendrerit congue, eros orci sagittis est, sed accumsan metus libero vitae massa. Vestibulum mi nibh, fringilla ut viverra sit amet, suscipit id nisl. Proin volutpat nisi a leo aliquet, vitae consequat tortor luctus. Morbi vehicula feugiat velit elementum commodo. Ut iaculis luctus purus, et cursus risus dapibus sed. Nulla nec urna massa. Ut vitae nisl a est vehicula ullamcorper at facilisis lorem. Phasellus dignissim, nulla at blandit volutpat, tortor quam convallis lectus, sit amet congue nisi eros sed massa. Praesent maximus dui aliquet iaculis bibendum. Praesent risus turpis, elementum nec dapibus maximus, efficitur sed ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas placerat lorem at urna rhoncus, at semper mauris interdum. Aenean urna metus, viverra eu odio sit amet, finibus dictum magna. Suspendisse tortor mauris, pharetra et dolor vel, vehicula cursus magna.",
+      "tags": ["memes", "doge", "gif", "haha", "to-the-moon", "crypto"]
     }
   ]
 }
