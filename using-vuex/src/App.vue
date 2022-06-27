@@ -1,36 +1,18 @@
 <template>
   <h1>StoreX</h1>
-  <ProductsFeatured :featured="featuredProducts" />
-  <ProductsAll :products="products" />
+  <ProductsFeatured />
+  <ProductsAll />
 </template>
 
 <script>
 import ProductsFeatured from './components/ProductsFeatured.vue'
 import ProductsAll from './components/ProductsAll.vue'
 
-import { ref, computed } from 'vue'
-
 export default {
   name: 'App',
   components: {
     ProductsFeatured,
     ProductsAll
-  },
-  setup() {
-    const products = ref([])
-
-    const loadData = async () => {
-      let data = await fetch('http://localhost:3000/products')
-      data = await data.json()
-      products.value = data
-    }
-    loadData()
-
-    const featuredProducts = computed(() => {
-      return products.value.filter(product => product.featured)
-    })
-
-    return { products, featuredProducts }
   }
 }
 </script>

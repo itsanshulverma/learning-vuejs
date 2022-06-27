@@ -14,7 +14,11 @@
 
 <script>
 export default {
-  props: ['products']
+  computed: {
+    products() {
+      return this.$store.state.products
+    }
+  }
 }
 </script>
 
