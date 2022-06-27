@@ -17,7 +17,12 @@ const store = createStore({
     return {
       products
     }
-  }
+  },
+	getters: {
+		featuredProducts: state => {
+			return state.products.filter(product => product.featured)
+		}
+	}
 })
 
 export default store

@@ -20,7 +20,11 @@
 
 <script>
 export default {
-  props: ['featured']
+  computed: {
+    featured() {
+      return this.$store.getters.featuredProducts
+    }
+  }
 }
 </script>
 
