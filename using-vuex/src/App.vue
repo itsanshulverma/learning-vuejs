@@ -17,6 +17,10 @@ export default {
   },
   methods: {
     reducePrice() {
+      // Explicitly changing state: 
+      // This will not have any effect in strict mode
+      // this.$store.state.products.forEach(product => product.price *= 0.8)
+
       this.$store.commit('discount')
     }
   }

@@ -3,6 +3,7 @@ import { ref } from 'vue'
 
 // Create a new store instance.
 const store = createStore({
+  strict: true,
   state () {
 		const products = ref([])
 
