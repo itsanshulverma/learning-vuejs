@@ -22,7 +22,12 @@ const store = createStore({
 		featuredProducts: state => {
 			return state.products.filter(product => product.featured)
 		}
-	}
+	},
+  mutations: {
+    discount: state => {
+      state.products.forEach(product => product.price *= 0.8)
+    }
+  }
 })
 
 export default store

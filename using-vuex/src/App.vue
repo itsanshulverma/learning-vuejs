@@ -1,5 +1,6 @@
 <template>
   <h1>StoreX</h1>
+  <button @click="reducePrice">Discount by 20%</button>
   <ProductsFeatured />
   <ProductsAll />
 </template>
@@ -13,6 +14,11 @@ export default {
   components: {
     ProductsFeatured,
     ProductsAll
+  },
+  methods: {
+    reducePrice() {
+      this.$store.commit('discount')
+    }
   }
 }
 </script>
