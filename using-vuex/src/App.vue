@@ -1,6 +1,6 @@
 <template>
   <h1>StoreX</h1>
-  <button @click="reducePrice">Discount by 20%</button>
+  <button @click="reducePrice(20)">Discount by 20%</button>
   <ProductsFeatured />
   <ProductsAll />
 </template>
@@ -16,14 +16,14 @@ export default {
     ProductsAll
   },
   methods: {
-    reducePrice() {
+    reducePrice(percent) {
       // Explicitly changing state: 
       // This will not have any effect in strict mode
       // this.$store.state.products.forEach(product => product.price *= 0.8)
 
       // this.$store.commit('discount')
 
-      this.$store.dispatch('discount')
+      this.$store.dispatch('discount', percent)
     }
   }
 }

@@ -25,18 +25,18 @@ const store = createStore({
 		}
 	},
   mutations: {
-    discount: state => {
+    discount: (state, percent) => {
       // This asynchronous task cannot be accomplished here.
       // setTimeout(function(){
       //   state.products.forEach(product => product.price *= 0.8)
       // }, 3000)
-      state.products.forEach(product => product.price *= 0.8)
+      state.products.forEach(product => product.price *= (1-(percent/100)))
     }
   },
   actions: {
-    discount: context => {
+    discount: (context, percent) => {
       setTimeout(function(){
-        context.commit('discount')
+        context.commit('discount', percent)
       }, 2000)
     }
   }
