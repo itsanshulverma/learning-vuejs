@@ -1,7 +1,7 @@
 <template>
   <h2>Featured Products</h2>
   <div class="products-featured">
-    <div v-for="product in featured" :key="product.id" class="product">
+    <div v-for="product in featuredProducts" :key="product.id" class="product">
       <div>
         <h3>{{ product.title }}</h3>
         <img :src=product.image />
@@ -19,11 +19,16 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   computed: {
-    featured() {
-      return this.$store.getters.featuredProducts
-    }
+    // featured() {
+    //   return this.$store.getters.featuredProducts
+    // },
+    ...mapGetters([
+      'featuredProducts' //, 'nextGetter'
+    ])
   }
 }
 </script>

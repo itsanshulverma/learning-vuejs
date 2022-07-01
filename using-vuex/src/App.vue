@@ -1,6 +1,6 @@
 <template>
   <h1>StoreX</h1>
-  <button @click="reducePrice(20)">Discount by 20%</button>
+  <button @click="discount(20)">Discount by 20%</button>
   <ProductsFeatured />
   <ProductsAll />
 </template>
@@ -9,6 +9,8 @@
 import ProductsFeatured from './components/ProductsFeatured.vue'
 import ProductsAll from './components/ProductsAll.vue'
 
+import { mapActions } from 'vuex'
+
 export default {
   name: 'App',
   components: {
@@ -16,15 +18,18 @@ export default {
     ProductsAll
   },
   methods: {
-    reducePrice(percent) {
-      // Explicitly changing state: 
-      // This will not have any effect in strict mode
-      // this.$store.state.products.forEach(product => product.price *= 0.8)
+    // reducePrice(percent) {
+    //   // Explicitly changing state: 
+    //   // This will not have any effect in strict mode
+    //   // this.$store.state.products.forEach(product => product.price *= 0.8)
 
-      // this.$store.commit('discount')
+    //   // this.$store.commit('discount')
 
-      this.$store.dispatch('discount', percent)
-    }
+    //   this.$store.dispatch('discount', percent)
+    // }
+    ...mapActions([
+      'discount' //, 'nextAction'
+    ])
   }
 }
 </script>
